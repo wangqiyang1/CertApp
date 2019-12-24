@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>区块链证书存储管理平台</title>
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/static/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link th:href="@{/static/css/animate.css}" rel="stylesheet" />
+    <link th:href="@{/static/css/plugins/codemirror/codemirror.css}" rel="stylesheet" />
+    <link th:href="@{/static/css/plugins/codemirror/ambiance.css}" rel="stylesheet" />
+    <link th:href="@{/static/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/static/css/plugins/sweetalert/sweetalert.css}" rel="stylesheet"/>
+    <link th:href="@{/static/css/plugins/iCheck/custom.css}" rel="stylesheet" />
+    <!--<link th:href="@{/static/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css}" rel="stylesheet"/>-->
+</head>
+
+<body class="fixed-sidebar no-skin-config full-height-layout">
+
+    <div id="wrapper" style="background:gainsboro;">		
+       <div id="page-wrappers" class="gray-bg"> 
+			<div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-12" style="text-align:center">
+                    <strong style="font-weight:bold;font-size:30px;">区块链证书存储管理平台</strong>
+                </div>
+ 
+            </div>
+            <div class="fh-breadcrumb">
+
+                <div class="fh-column">
+                    <div class="full-height-scroll">
+                        <ul class="list-group elements-list">
+                            <li class="list-group-item active">
+                                <a data-toggle="tab" href="#tab-1">
+                                   <!-- <small class="pull-right text-muted"> 16.02.2015</small> -->
+                                  <!--  <strong>Ann Smith</strong> -->
+                                    <div class="small m-t-xs">
+                                        <strong>
+                                            用户区块链注册
+                                        </strong>
+<!--                                        <p class="m-b-none">
+                                            <i class="fa fa-map-marker"></i> Riviera State 32/106
+                                        </p> -->
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item ">
+                                <a data-toggle="tab" href="#tab-2">
+                                    <div class="small m-t-xs">
+                                        <strong class="m-b-xs">
+                                            证书上传
+                                            <br/>
+                                        </strong>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a data-toggle="tab" href="#tab-3">
+                                    <div class="small m-t-xs">
+                                        <strong class="m-b-xs">
+                                            查询用户
+                                        </strong>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a data-toggle="tab" href="#tab-4">
+                                    <div class="small m-t-xs">
+                                        <strong class="m-b-xs">
+                                            证书查询
+                                        </strong>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="list-group-item">
+                                <a data-toggle="tab" href="#tab-5">
+                                    <div class="small m-t-xs">
+                                        <strong class="m-b-xs">
+                                            用户证书查询
+                                        </strong>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a data-toggle="tab" href="#tab-6">
+                                    <div class="small m-t-xs">
+                                        <strong class="m-b-xs">
+                                            Hash验证
+                                        </strong>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="full-height">
+                    <div class="full-height-scroll white-bg border-left">
+
+                        <div class="element-detail-box">
+
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane active">
+                                    <form  class="form-horizontal">
+                                        <div class="form-group"><label class="col-sm-2 control-label">用户ID</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control userId" /></div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-2 control-label">用户姓名</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control userName" /></div>
+                                        </div>
+
+                                        <div  class="form-group">
+                                            <div class="col-sm-12" style="text-align: center;">
+                                            <button class="btn btn-primary register" type="button"><i class="fa fa-check"></i>&nbsp;注册</button>
+                                          </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label status" ></label>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                                <div id="tab-2" class="tab-pane ">
+                                    <form  class="form-horizontal">
+                                        <div class="form-group"><label class="col-sm-2 control-label">证书ID</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control certId" /></div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-2 control-label">证书名称</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control certName" /></div>
+                                        </div>
+
+                                        <div class="form-group"><label class="col-sm-2 control-label">用户ID</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control userId" /></div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-2 control-label">学校</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control school" /></div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-2 control-label">加密策略</label>
+                                            <div class="col-sm-10">
+                                                <label> <input type="radio" class="i-checks" value="1" name="celue" /> <i></i> 明文上传</label>&nbsp;&nbsp;
+                                                <label> <input type="radio" class="i-checks" checked="" value="2" name="celue" /> <i></i>属性加密上传 </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-2 control-label">属性加密策略</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control policy" /></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >证书内容</label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control certMessage" rows="10" style="resize: none;"></textarea>
+                                                <!-- <input type="password" class="form-control" name="password"> -->
+                                            </div>
+                                        </div>
+
+                                        <div  class="form-group">
+                                            <div class="col-sm-12" style="text-align: center;">
+                                                <button class="btn btn-primary certUpload" type="button"><i class="fa fa-check"></i>&nbsp;证书上传</button>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label status" ></label>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <div id="tab-3" class="tab-pane">
+                                    <form  class="form-horizontal">
+                                        <div class="form-group"><label class="col-sm-2 control-label">用户ID</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control userId" /></div>
+                                        </div>
+                                        <div  class="form-group">
+                                            <div class="col-sm-12" style="text-align: center;">
+                                                <button class="btn btn-primary queryUser" type="button"><i class="fa fa-check"></i>&nbsp;查询</button>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label status" ></label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="tab-4" class="tab-pane">
+                                    <form  class="form-horizontal">
+                                        <div class="form-group"><label class="col-sm-2 control-label">证书ID</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control certId" /></div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-2 control-label">私钥</label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control prvkey" rows="10" style="resize: none;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div  class="form-group">
+                                            <div class="col-sm-12" style="text-align: center;">
+                                                <button class="btn btn-primary queryCert" type="button"><i class="fa fa-check"></i>&nbsp;查询</button>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <!--<label class="col-sm-12 control-label status" ></label>-->
+                                            <textarea class="form-control status" rows="10" style="resize: none;"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="tab-5" class="tab-pane">
+                                    <form  class="form-horizontal">
+                                        <div class="form-group"><label class="col-sm-2 control-label">用户ID</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control userId" /></div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-2 control-label">证书ID</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control certId" /></div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-2 control-label">私钥</label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control prvkey" rows="10" style="resize: none;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div  class="form-group">
+                                            <div class="col-sm-12" style="text-align: center;">
+                                                <button class="btn btn-primary queryCertWithUserId" type="button"><i class="fa fa-check"></i>&nbsp;查询</button>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <!--<label class="col-sm-12 control-label status" ></label>-->
+                                            <textarea class="form-control status" rows="10" style="resize: none;"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="tab-6" class="tab-pane">
+                                    <form  class="form-horizontal">
+                                        <div class="form-group"><label class="col-sm-2 control-label">证书明文</label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control message" rows="10" style="resize: none;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div  class="form-group">
+                                            <div class="col-sm-12" style="text-align: center;">
+                                                <button class="btn btn-primary computeHash" type="button"><i class="fa fa-check"></i>&nbsp;查询</button>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label status" ></label>
+                                        </div>
+                                    </form>
+                                </div>
+							</div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+
+        </div> 
+        </div> 
+
+    <!-- Mainly scripts -->
+    <script th:src="@{/static/js/jquery-2.1.1.js}"></script>
+    <script th:src="@{/static/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+    <script th:src="@{/static/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+    <script th:src="@{/static/js/plugins/sweetalert/sweetalert.min.js}"></script>
+    <!-- Custom and plugin javascript -->
+    <script th:src="@{/static/js/inspinia.js}"></script>
+    <script th:src="@{/static/js/cert.js}"></script>
+    <script th:src="@{/static/js/plugins/pace/pace.min.js}"></script>
+    <!-- iCheck -->
+    <script th:src="@{/static/js/plugins/iCheck/icheck.min.js}"></script>
+</body>
+
+</html>
